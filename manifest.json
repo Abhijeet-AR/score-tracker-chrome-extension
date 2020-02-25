@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+
+    "name": "Score Tracker",
+    "description": "Track your daily score",
+    "version": "1.0",
+    "icons": {"128": "images/circle-cropped.png"},
+
+    "browser_action": {
+        "default_icon": "images/circle-cropped.png",
+        "default_popup": "popup.html",
+        "defult_title": "Score Tracker"
+    }
+}

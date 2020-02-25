@@ -1,0 +1,32 @@
+body{
+    min-height: 180px;
+    margin: 0;
+    padding: 0;
+    width: 350px;
+    /* height: 250px; */
+    background-color: #eeeeee;
+    border-style: solid;
+}
+
+.title{
+    /* font-family: 'Bitter'; */
+    font-family: 'Graduate';
+    font-weight: bold;
+    /* color: #015668; */
+    color: #2d4059;
+    font-size: xx-large;
+}
+
+.platform, .colon{
+    font-family: Graduate;
+    font-weight: bold;
+}
+
+.score{
+    /* font-weight: 500; */
+    font-family: 'Graduate';
+}
+
+.bg{
+    background-color: lightcoral;
+}
