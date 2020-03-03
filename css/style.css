@@ -2,8 +2,9 @@ body{
     min-height: 180px;
     margin: 0;
     padding: 0;
-    width: 375px;
+    /* width: 375px; */
     /* height: 250px; */
+    width: 375px;
     background-color: #eeeeee;
     border-style: solid;
 }
