@@ -10,5 +10,9 @@
         "default_icon": "images/circle-cropped.png",
         "default_popup": "popup.html",
         "defult_title": "Score Tracker"
-    }
+    },
+
+    "permissions": [
+        "storage"
+    ]
 }
