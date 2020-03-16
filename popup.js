@@ -19,19 +19,18 @@ async function fill_scores(){
     .then(response => response.json())
     .then(data =>{
         if(data.status == 'Success'){
-            if(data.status == 'Success'){
-                chrome.storage.sync.get('codeforces', function(stored_data){
-                    try{
-                        document.getElementById('codeforces').textContent = data.rating - stored_data.codechef.rating;
-                    }
-                    catch(err){
-                        chrome.storage.sync.set({'codeforces': data}, function(){
-                            document.getElementById('codeforces').textContent = 0;
-                        });
-                    }
-                });
-            }
+            chrome.storage.sync.get('codeforces', function(stored_data){
+                try{
+                    document.getElementById('codeforces').textContent = data.rating - stored_data.codechef.rating;
+                }
+                catch(err){
+                    chrome.storage.sync.set({'codeforces': data}, function(){
+                        document.getElementById('codeforces').textContent = 0;
+                    });
+                }
+            });
         }
+
         else
             document.getElementById('codeforces').textContent = 'error';
     })
@@ -43,7 +42,7 @@ async function fill_scores(){
     .then(data => {     
         if(data.status == 'Success'){
             chrome.storage.sync.get('codechef', function(stored_data){
-                console.log(data);
+                // console.log(data);
                 try{
                     document.getElementById('codechef').textContent = data.rank - stored_data.codechef.rank;
                 }
@@ -65,7 +64,7 @@ async function fill_scores(){
     .then(data => {
         if(data.status == 'Success'){
             chrome.storage.sync.get('spoj', function(stored_data){
-                console.log(data);
+                // console.log(data);
                 try{
                     document.getElementById('spoj').textContent = data.points - stored_data.spoj.points;
                 }
@@ -87,7 +86,7 @@ async function fill_scores(){
     .then(data => {
         if(data.status == 'Success'){
             chrome.storage.sync.get('interviewbit', function(stored_data){
-                console.log(data);
+                // console.log(data);
                 try{
                     document.getElementById('interviewbit').textContent = data.score - stored_data.interviewbit.score;
                 }
