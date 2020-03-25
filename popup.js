@@ -47,7 +47,15 @@ async function fill_scores(){
                     document.getElementById('codechef').textContent = data.rank - stored_data.codechef.rank;
                 }
                 catch(err){
-                    chrome.storage.sync.set({'codechef': data}, function(){
+                    chrome.storage.sync.set({'codechef': 
+                    {
+                        'status': data.status, 
+                        'rank': data.rank,
+                        'rating': data.rating,
+                        'global_rank': data.global_rank,
+                        'contests': data.contests
+                    }
+                    }, function(){
                         document.getElementById('codechef').textContent = 0;
                     });
                 }
@@ -106,3 +114,9 @@ async function fill_scores(){
 }
 
 fill_scores()
+
+// window.onload = function() {
+//     document.querySelector('#settings').addEventListener('click', () => {
+//         chrome.runtime.openOptionsPage();
+//     });
+// }

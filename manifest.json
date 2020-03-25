@@ -5,11 +5,11 @@
     "description": "Track your daily score",
     "version": "1.0",
     "icons": {
-        "128": "images/circle-cropped.png"
+        "128": "images/score_tracker_circled.png"
     },
 
     "browser_action": {
-        "default_icon": "images/circle-cropped.png",
+        "default_icon": "images/st_circle.png",
         "default_popup": "popup.html",
         "defult_title": "Score Tracker"
     },

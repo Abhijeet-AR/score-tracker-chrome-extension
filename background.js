@@ -1,6 +1,6 @@
 console.log('background Running');
 
-let reset_time = new Date().setHours(23, 59);
+let reset_time = new Date().setHours(0, 5);
 
 let user_info = {
     'codechef': 'abhijeet_ar',
@@ -20,7 +20,7 @@ function reset_data() {
     .then(response => response.json())
     .then(data => {
         if (data.status == 'Success'){
-            chrome.storage.sync.get(['date', 'codeforces'], (stored_data) => {
+            chrome.storage.sync.get(['date', 'count', 'codeforces'], (stored_data) => {
                 try{
                     let d = new Date();
                     let date_today = {
@@ -31,7 +31,18 @@ function reset_data() {
 
                     // console.log('Stored Data', stored_data, date_today);
                     if((stored_data.codeforces == undefined) || JSON.stringify(stored_data.date) != JSON.stringify(date_today)){
-                        chrome.storage.sync.set({'date': date_today, 'codeforces': data}, function(){
+                        chrome.storage.sync.set({'codeforces': data}, function(){
+                            try{
+                                if(++count == 4){
+                                    chrome.storage.sync.set({'date': date_today, }, () => {
+                                        console.log('Date updated');
+                                    })
+                                }
+                            }   
+                            catch(err){
+                                count = 0;
+                            }
+
                             console.log('Codeforces Data Set');
                         });
                     }
@@ -67,7 +78,25 @@ function reset_data() {
 
                     // console.log('Stored Data', stored_data.codechef);
                     if((stored_data.codechef == undefined) || (JSON.stringify(stored_data.date) != JSON.stringify(date_today))){
-                        chrome.storage.sync.set({'date': date_today, 'codechef': data}, function(){
+                        chrome.storage.sync.set({'codechef': {
+                            'status': data.status, 
+                            'rank': data.rank,
+                            'rating': data.rating,
+                            'global_rank': data.global_rank,
+                            'contests': data.contests
+                        }
+                        }, function(){
+                            try{
+                                if(++count == 4){
+                                    chrome.storage.sync.set({'date': date_today, }, () => {
+                                        console.log('Date updated');
+                                    })
+                                }
+                            }
+                            catch(err){
+                                count = 0;
+                            }
+
                             console.log('Codechef Data Set');
                         });
                     }
@@ -103,7 +132,18 @@ function reset_data() {
 
                     // console.log('Stored Data', stored_data);
                     if((stored_data.spoj == undefined) || (JSON.stringify(stored_data.date) != JSON.stringify(date_today))){
-                        chrome.storage.sync.set({'date': date_today, 'spoj': data}, function(){
+                        chrome.storage.sync.set({'spoj': data}, () => {
+                            try{
+                                if(++count == 4){
+                                    chrome.storage.sync.set({'date': date_today, }, () => {
+                                        console.log('Date updated');
+                                    })
+                                }
+                            }
+                            catch(err){
+                                count = 0;
+                            }
+
                             console.log('SPOJ Data Set');
                         });
                     }
@@ -139,7 +179,18 @@ function reset_data() {
 
                     // console.log('Stored Data', stored_data);
                     if((stored_data.interviewbit == undefined) || (JSON.stringify(stored_data.date) != JSON.stringify(date_today))){
-                        chrome.storage.sync.set({'date': date_today, 'interviewbit': data}, function(){
+                        chrome.storage.sync.set({'interviewbit': data}, () => {
+                            try{
+                                if(++count == 4){
+                                    chrome.storage.sync.set({'date': date_today, }, () => {
+                                        console.log('Date updated');
+                                    })
+                                }
+                            }
+                            catch(err){
+                                count = 0;
+                            }
+
                             console.log('Interviewbit Data Set');
                         });
                     }
@@ -159,8 +210,7 @@ function reset_data() {
     })
 }
 
-chrome.runtime.onInstalled.addListener((details) => {
-    console.log(details.reason, 'successful');
+function create_alarm(){
     chrome.alarms.get('Reset', (alarm) => {
         if(alarm)
             console.log('Alarm already exists', alarm);
@@ -168,23 +218,23 @@ chrome.runtime.onInstalled.addListener((details) => {
         else{
             chrome.alarms.create('Reset', {when: reset_time});
             console.log('Alarm created at ', new Date().getHours(), ':', new Date().getMinutes());
+            // let today_time = ;
+            reset_time = new Date().setHours(0, 5)+86400000;
         }
-    })
+    });
+}
+
+chrome.runtime.onInstalled.addListener((details) => {
+    console.log(details.reason, 'successful');  
+    create_alarm();
 })
 
 chrome.runtime.onStartup.addListener(() => {
-    chrome.alarms.get('Reset', (alarm) => {
-        if(alarm)
-            console.log('Alarm already exists', alarm);
-
-        else{
-            chrome.alarms.create('Reset', {when: reset_time});
-            console.log('Alarm created at ', new Date().getHours(), ':', new Date().getMinutes());
-        }
-    })
+    create_alarm();
 });
 
 chrome.alarms.onAlarm.addListener(() => {
     console.log("Resetting Data at ", new Date().getHours(), ':', new Date().getMinutes());
     reset_data();
+    create_alarm();
 });
