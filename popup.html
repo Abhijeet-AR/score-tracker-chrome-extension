@@ -21,33 +21,32 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
 
         <h1 class="title text-center mt-4">Score Tracker</h1>
         
         <div class="row my-4 mx-2">
-            <div class="platforms col-3">
-                <div class="row">
-                    <p class="platform col">Codeforces</p>
-                    <p class="platform col">Codechef</p>
-                    <p class="platform col">SPOJ</p>
-                    <p class="platform col">Interviewbit</p>
-                </div>
-            </div>
-            <div class="colons col-3">
-                    <p class="colon col">:</p>
-                    <p class="colon col">:</p>
-                    <p class="colon col">:</p>
-                    <p class="colon col">:</p>
-            </div>
-            <div class="scores col-3">
-                <div class="row">
-                    <p class="score col" id="codeforces">Loading..</p>
-                    <p class="score col" id="codechef">Loading..</p>
-                    <p class="score col" id="spoj">Loading..</p>
-                    <p class="score col" id="interviewbit">Loading..</p>
-                </div>
-            </div>
+            <div class="platform col-6">Codeforces</div>
+            <div class="colon col-2">:</div>
+            <div class="score col-4 text-center pr-5" id="codeforces">Loading..</div>            
+        </div>
+
+        <div class="row my-4 mx-2">
+            <div class="platform col-6">Codechef</div>
+            <div class="colon col-2">:</div>
+            <div class="score col-4 text-center pr-5" id="codechef">Loading..</div>            
+        </div>
+
+        <div class="row my-4 mx-2">
+            <div class="platform col-6">SPOJ</div>
+            <div class="colon col-2">:</div>
+            <div class="score col-4 text-center pr-5" id="spoj">Loading..</div>
+        </div>
+
+        <div class="row my-4 mx-2">
+            <div class="platform col-6">Interviewbit</div>
+            <div class="colon col-2">:</div>
+            <div class="score col-4 text-center pr-5" id="interviewbit">Loading..</div>
         </div>
         
         <!-- <button id="settings">Settings</button> -->

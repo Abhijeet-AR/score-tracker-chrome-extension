@@ -1,10 +1,10 @@
 body{
-    min-height: 180px;
-    margin: 0;
-    padding: 0;
+    /* min-height: 180px; */
+    margin: 0px;
+    padding: 5px;
     /* width: 375px; */
     /* height: 250px; */
-    width: 375px;
+    min-width: 375px;
     background-color: #eeeeee;
     border-style: solid;
 }
@@ -26,8 +26,4 @@ body{
 .score{
     /* font-weight: 500; */
     font-family: 'Graduate';
-}
-
-.bg{
-    background-color: lightcoral;
 }
