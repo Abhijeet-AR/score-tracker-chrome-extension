@@ -7,6 +7,7 @@
 
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Graduate&display=swap" rel="stylesheet">
@@ -21,10 +22,10 @@
 
 </head>
 <body>
+    <i class="fa fa-cog settings float-right mr-2 mt-2" href="settings.html" aria-hidden="true"></i>
     <div class="container-fluid">
+        <h1 class="title text-center mt-3">Score Tracker</h1>
 
-        <h1 class="title text-center mt-4">Score Tracker</h1>
-        
         <div class="row my-4 mx-2">
             <div class="platform col-6">Codeforces</div>
             <div class="colon col-2">:</div>
@@ -47,9 +48,9 @@
             <div class="platform col-6">Interviewbit</div>
             <div class="colon col-2">:</div>
             <div class="score col-4 text-center pr-5" id="interviewbit">Loading..</div>
-        </div>
-        
-        <!-- <button id="settings">Settings</button> -->
+        </div>  
     </div>
+
+    <!-- <i class="fa fa-circle-o-notch fa-spin float-none fa-3x fa-fw" style="position: fixed; top: 50%; left: 50%; transform: translate(-20px, -30px);"></i> -->
 </body>
 </html>

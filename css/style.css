@@ -27,3 +27,16 @@ body{
     /* font-weight: 500; */
     font-family: 'Graduate';
 }
+
+.settings{
+    animation-name: spin-twice;
+    animation-duration: 0.3s;
+    animation-delay: 0.5s;
+    animation-timing-function: linear;
+}
+
+@keyframes spin-twice{
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(45deg);}
+    100% {transform: rotate(0deg);}
+}
