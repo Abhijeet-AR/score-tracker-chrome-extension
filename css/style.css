@@ -1,42 +1,104 @@
-body{
-    /* min-height: 180px; */
-    margin: 0px;
-    padding: 5px;
-    /* width: 375px; */
-    /* height: 250px; */
-    min-width: 375px;
-    background-color: #eeeeee;
-    border-style: solid;
+body {
+  /* min-height: 180px; */
+  margin: 0px;
+  padding: 5px;
+  /* width: 375px; */
+  /* height: 250px; */
+  min-width: 375px;
+  background-color: #eeeeee;
+  border-style: solid;
 }
 
-.title{
-    /* font-family: 'Bitter'; */
-    font-family: 'Graduate';
-    font-weight: bold;
-    /* color: #015668; */
-    color: #2d4059;
-    font-size: xx-large;
+a {
+  text-decoration: none !important;
+  color: #2d4059;
 }
 
-.platform, .colon{
-    font-family: Graduate;
-    font-weight: bold;
+.title {
+  /* font-family: 'Bitter'; */
+  font-family: "Graduate";
+  font-weight: bold;
+  /* color: #015668; */
+  color: #2d4059;
+  font-size: xx-large;
 }
 
-.score{
-    /* font-weight: 500; */
-    font-family: 'Graduate';
+.platform,
+.colon {
+  font-family: Graduate;
+  font-weight: bold;
 }
 
-.settings{
-    animation-name: spin-twice;
-    animation-duration: 0.3s;
-    animation-delay: 0.5s;
-    animation-timing-function: linear;
+.score {
+  /* font-weight: 500; */
+  font-family: "Graduate";
 }
 
-@keyframes spin-twice{
-    0% {transform: rotate(0deg);}
-    50% {transform: rotate(45deg);}
-    100% {transform: rotate(0deg);}
+#settings {
+  animation-name: spin-twice;
+  animation-duration: 0.3s;
+  animation-delay: 0.4s;
+  animation-timing-function: linear;
+}
+
+/* settings css */
+.back {
+  font-size: 20px;
+}
+
+.username-inp {
+  background-color: #f4f4f4;
+}
+
+.username-inp:focus {
+  background-color: #f7f7f7 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px #6c7b95 solid !important;
+}
+
+#save {
+  text-align: center;
+  font-family: "Graduate";
+  font-weight: bold;
+}
+
+#save > button {
+  color: #2d4059;
+  text-decoration: none;
+}
+
+#save > button:hover {
+  /* color: #3b6978; */
+  color: #3c70a4;
+}
+
+@keyframes spin-twice {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spin-quarter-clock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes spin-quarter-anti-clock {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
