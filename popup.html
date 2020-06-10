@@ -1,56 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- BOOTSTRAP CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <!-- FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Graduate&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Graduate&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Cutom JS -->
-    <script src="popup.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
 
     <title>Score Tracker</title>
-
-</head>
-<body>
-    <i class="fa fa-cog settings float-right mr-2 mt-2" href="settings.html" aria-hidden="true"></i>
+  </head>
+  <body>
+    <a href="settings.html">
+      <i
+        class="fa fa-cog float-right mr-2 mt-2"
+        id="settings"
+        aria-hidden="true"
+      ></i>
+    </a>
     <div class="container-fluid">
-        <h1 class="title text-center mt-3">Score Tracker</h1>
+      <h1 class="title text-center mt-3">Score Tracker</h1>
 
-        <div class="row my-4 mx-2">
-            <div class="platform col-6">Codeforces</div>
-            <div class="colon col-2">:</div>
-            <div class="score col-4 text-center pr-5" id="codeforces">Loading..</div>            
+      <div class="row my-4 mx-2">
+        <div class="platform col-6">Codeforces</div>
+        <div class="colon col-2">:</div>
+        <div class="score col-4 text-center pr-5" id="codeforces">
+          Loading..
         </div>
+      </div>
 
-        <div class="row my-4 mx-2">
-            <div class="platform col-6">Codechef</div>
-            <div class="colon col-2">:</div>
-            <div class="score col-4 text-center pr-5" id="codechef">Loading..</div>            
+      <div class="row my-4 mx-2">
+        <div class="platform col-6">Codechef</div>
+        <div class="colon col-2">:</div>
+        <div class="score col-4 text-center pr-5" id="codechef">Loading..</div>
+      </div>
+
+      <div class="row my-4 mx-2">
+        <div class="platform col-6">SPOJ</div>
+        <div class="colon col-2">:</div>
+        <div class="score col-4 text-center pr-5" id="spoj">Loading..</div>
+      </div>
+
+      <div class="row my-4 mx-2">
+        <div class="platform col-6">Interviewbit</div>
+        <div class="colon col-2">:</div>
+        <div class="score col-4 text-center pr-5" id="interviewbit">
+          Loading..
         </div>
-
-        <div class="row my-4 mx-2">
-            <div class="platform col-6">SPOJ</div>
-            <div class="colon col-2">:</div>
-            <div class="score col-4 text-center pr-5" id="spoj">Loading..</div>
-        </div>
-
-        <div class="row my-4 mx-2">
-            <div class="platform col-6">Interviewbit</div>
-            <div class="colon col-2">:</div>
-            <div class="score col-4 text-center pr-5" id="interviewbit">Loading..</div>
-        </div>  
+      </div>
     </div>
 
     <!-- <i class="fa fa-circle-o-notch fa-spin float-none fa-3x fa-fw" style="position: fixed; top: 50%; left: 50%; transform: translate(-20px, -30px);"></i> -->
-</body>
+    <script src="popup.js"></script>
+  </body>
 </html>

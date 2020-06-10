@@ -1,27 +1,22 @@
 {
-    "manifest_version": 2,
+  "manifest_version": 2,
 
-    "name": "Score Tracker",
-    "description": "Track your daily score",
-    "version": "1.0",
-    "icons": {
-        "128": "images/score_tracker_circled.png"
-    },
+  "name": "Score Tracker",
+  "description": "Track your daily score",
+  "version": "1.0",
+  "icons": {
+    "128": "images/score_tracker_circled.png"
+  },
 
-    "browser_action": {
-        "default_icon": "images/st_circle.png",
-        "default_popup": "popup.html",
-        "defult_title": "Score Tracker"
-    },
+  "browser_action": {
+    "default_icon": "images/st_circle.png",
+    "default_popup": "popup.html",
+    "defult_title": "Score Tracker"
+  },
 
-    "background": {
-        "scripts": [
-            "background.js"
-        ]
-    },
+  "background": {
+    "scripts": ["background.js"]
+  },
 
-    "permissions": [
-        "storage",
-        "alarms"
-    ]
+  "permissions": ["storage", "alarms"]
 }
